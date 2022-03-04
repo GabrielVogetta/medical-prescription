@@ -16,6 +16,10 @@ export default createGlobalStyle`
         /* font-family: 'Red Hat Mono', monospace; */
     }
 
+    button{
+        cursor: pointer;
+    }
+
     body{
         background-color: var(--primary);
     }
@@ -23,5 +27,6 @@ export default createGlobalStyle`
     :root{
         --white: #fdfdfd;
         --primary: #2e4450;
+        --secondary: #89dee2;
     }
 `;

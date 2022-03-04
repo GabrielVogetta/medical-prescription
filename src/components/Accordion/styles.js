@@ -13,8 +13,9 @@ export const Container = styled.li`
 
 export const Header = styled.header`
   font-size: 18px;
-  padding: 20px 50px;
-  background-color: #89dee2;
+  /* padding: 20px 50px; */
+  padding: 10px;
+  background-color: var(--secondary);
   color: #2e4450;
   border-radius: 8px;
   cursor: pointer;
@@ -23,11 +24,13 @@ export const Header = styled.header`
   justify-content: space-between;
   position: relative;
 
-
+  & span{
+    font-size: 15px;
+  }
 `;
 
 export const Title = styled.h2`
-  font-size: 17px;
+  font-size: 16px;
   &::selection{
     color: var(--white);
     background-color: var(--primary);
@@ -35,7 +38,7 @@ export const Title = styled.h2`
 `;
 
 export const Content = styled.main`
-  padding: 10px 10px 10px 20px;
+  padding: 10px;
   height: fit-content;
   background-color: #527c88;
   display: flex;
@@ -44,6 +47,24 @@ export const Content = styled.main`
   justify-content: space-evenly;
   border-radius: 8px;
   margin-top: 2px;
+  gap: 5px;
+
+  & span{
+    align-self: flex-start;
+    margin-left: 10px;
+  }
+
+  & .label{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .medicines{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Days = styled.div`
@@ -67,8 +88,11 @@ export const Description = styled.p`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   justify-content: space-between;
+  padding-right: 30px;
+
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -91,6 +115,12 @@ export const Description = styled.p`
   img{
     width: 30px;
     height: 30px;
+  }
+
+  .number{
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 `;
 

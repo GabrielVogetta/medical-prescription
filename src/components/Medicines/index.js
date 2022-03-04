@@ -4,7 +4,7 @@ import Accordion from '../Accordion';
 import { ContainerUl } from "./styles";
 
 export default function Medicines() {
-  const medicines = useMedicines();
+  const {medicines} = useMedicines();
 
   console.log(medicines);
 
@@ -14,10 +14,12 @@ export default function Medicines() {
         return (
           <Accordion
             key={index}
-            title={medicine.title}
-            morning={!medicine.morning ? false : medicine.morning}
-            afternoon={!medicine.afternoon ? false : medicine.afternoon}
-            night={!medicine.night ? false : medicine.night}
+            name={medicine.name}
+            days={medicine.days}
+            breakfast={!medicine.breakfast ? false : medicine.breakfast}
+            lunch={!medicine.lunch ? false : medicine.lunch}
+            dinner={!medicine.dinner ? false : medicine.dinner}
+            mg={medicine.mg}
           />
         );
       })}

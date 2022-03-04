@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles/>
     <MedicinesProvider>
-      <App />
+        <App />
     </MedicinesProvider>
   </React.StrictMode>,
   document.getElementById('root')
