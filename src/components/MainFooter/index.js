@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Container, Button} from './styles';
 import ModalForm from '../ModalForm';
 
-export default function NavFooter() {
+export default function MainFooter() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

@@ -1,6 +1,6 @@
 import MainHeader from './components/MainHeader';
 import Medicines from './components/Medicines';
-import NavFooter from './components/NavFooter';
+import MainFooter from './components/MainFooter';
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <MainHeader/>
       <Medicines/>
-      <NavFooter/>
+      <MainFooter/>
     </>
   );
 }

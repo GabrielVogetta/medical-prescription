@@ -1,4 +1,4 @@
-import {Container, UserName, AddButton} from './styles';
+import {Container, UserName} from './styles';
 
 export default function MainHeader(){
 

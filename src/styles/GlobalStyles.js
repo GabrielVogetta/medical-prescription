@@ -28,5 +28,6 @@ export default createGlobalStyle`
         --white: #fdfdfd;
         --primary: #2e4450;
         --secondary: #89dee2;
+        --red: #EC7063;
     }
 `;

@@ -6,13 +6,12 @@ import { ContainerUl } from "./styles";
 export default function Medicines() {
   const {medicines} = useMedicines();
 
-  console.log(medicines);
-
   return (
     <ContainerUl>
       {medicines.map((medicine, index) => {
         return (
           <Accordion
+            id={medicine.id}
             key={index}
             name={medicine.name}
             days={medicine.days}

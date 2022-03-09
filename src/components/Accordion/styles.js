@@ -1,13 +1,16 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const Container = styled.li`
   width: 90%;
   color: #fdfdfd;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  position: relative;
 
-  @media(min-width: 600px){
+  @media(min-width: 1200px){
     width: 60%;
+  }
+
+  @media(min-width: 1200px){
+    width: 23%;
   }
 `;
 
@@ -27,6 +30,27 @@ export const Header = styled.header`
   & span{
     font-size: 15px;
   }
+
+  & span:after {
+    position: absolute;
+    content: 'Miligramas';
+    display: none;
+    padding: 5px;
+    background-color: var(--primary);
+    color: var(--white);
+    z-index: 3;
+    bottom: 50px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+  }
+
+  & span:hover:after{
+    display: block;
+  }
+
+  @media(min-width: 600px){
+    padding: 20px; 
+  }
 `;
 
 export const Title = styled.h2`
@@ -35,10 +59,39 @@ export const Title = styled.h2`
     color: var(--white);
     background-color: var(--primary);
   }
+  &:after {
+    position: absolute;
+    content: 'Nome do medicamento';
+    display: none;
+    padding: 5px;
+    background-color: var(--primary);
+    color: var(--white);
+    z-index: 3;
+    bottom: 50px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+  }
+
+  &:hover:after{
+    display: block;
+  }
+`;
+
+const OpenAnimation = keyframes`  
+  from { 
+    transform: rotateX(-90deg);
+    top: 0px;
+  }
+  
+  to { 
+    transform: rotateX(0deg);
+    top: 70px;
+  }
 `;
 
 export const Content = styled.main`
   padding: 10px;
+  padding-bottom: 20px;
   height: fit-content;
   background-color: #527c88;
   display: flex;
@@ -50,7 +103,6 @@ export const Content = styled.main`
   gap: 5px;
 
   & span{
-    align-self: flex-start;
     margin-left: 10px;
   }
 
@@ -65,6 +117,30 @@ export const Content = styled.main`
     display: flex;
     flex-direction: column;
   }
+
+  @media(min-width: 1200px){
+    &{
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      animation: ${OpenAnimation} .5s;
+    }
+  }
+`;
+
+export const ContentHeader = styled.header`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+`;
+
+export const DeleteButton = styled.button`
+  background-color: var(--red);
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--white);
 `;
 
 export const Days = styled.div`
@@ -81,9 +157,27 @@ export const Day = styled.div`
   border-color: ${props => props.checked ? 'var(--primary)' : 'var(--white)'};
   border-radius: 50%;
   background-color: ${props => props.checked && 'var(--primary)'};
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '${props => props.day}';
+    display: none;
+    padding: 5px;
+    background-color: var(--primary);
+    color: var(--white);
+    z-index: 3;
+    bottom: 30px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+  }
+
+  &:hover:after{
+    display: block;
+  }
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   font-size: 17px;
   margin-bottom: 20px;
   display: flex;
@@ -124,11 +218,12 @@ export const Description = styled.p`
   }
 `;
 
-export const Icon = styled.span`
+export const Icon = styled.button`
   font-size: 25px;
   transform: ${(props) => props.isOpen && "rotate(90deg)"};
   width: 30px;
   height: 30px;
+  background: none;
   
   transition: all 1s ease;
 
