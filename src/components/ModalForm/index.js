@@ -67,14 +67,13 @@ export default function ModalForm({onClose}) {
         };
         
         const res = await supabaseApi.insertMedicine(newMedicine);
-
-        console.log(res.error);
         
         if(res.error){
             return;
         }
         
         setMedicines([...medicines, newMedicine]);
+        onClose();
     }
 
     return (
